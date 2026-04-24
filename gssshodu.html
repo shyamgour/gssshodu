@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GSSS Hodu - Coming Soon</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Government Senior Secondary School, Hodu - Official Website Coming Soon" />
+  <meta name="keywords" content="GSSS Hodu, Sindhari, School, Education" />
+  <title>GSSS Hodu - Government Senior Secondary School</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -13,14 +15,66 @@
       font-family: 'Poppins', sans-serif;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      height: 100vh;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #f1f1f1;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* Navigation Bar */
+    header {
+      background: rgba(15, 32, 39, 0.95);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #ff9800;
+      text-decoration: none;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: #f1f1f1;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #ff9800;
+    }
+
+    /* Main Container */
+    main {
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: white;
-      text-align: center;
+      min-height: calc(100vh - 60px);
+      padding: 2rem;
     }
 
     .container {
@@ -28,75 +82,257 @@
       padding: 50px 40px;
       border-radius: 20px;
       backdrop-filter: blur(10px);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-      max-width: 600px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      max-width: 700px;
+      animation: slideIn 0.6s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     h1 {
       font-size: 2.8rem;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
       letter-spacing: 1px;
+      color: #ffffff;
     }
 
     h2 {
       font-weight: 300;
+      font-size: 1.3rem;
       margin-bottom: 25px;
-      color: #f1f1f1;
+      color: #ff9800;
     }
 
     p {
       font-size: 1.1rem;
-      margin-bottom: 30px;
-      line-height: 1.6;
+      margin-bottom: 20px;
+      line-height: 1.8;
+      color: #e0e0e0;
     }
 
     .badge {
       display: inline-block;
-      padding: 10px 25px;
+      padding: 12px 30px;
       border-radius: 50px;
       background: #ff9800;
       color: white;
-      font-weight: 500;
+      font-weight: 600;
       letter-spacing: 1px;
+      margin-bottom: 30px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+      margin: 30px 0;
+    }
+
+    .feature-item {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      border: 1px solid rgba(255, 152, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .feature-item:hover {
+      background: rgba(255, 152, 0, 0.1);
+      border-color: rgba(255, 152, 0, 0.5);
+      transform: translateY(-5px);
+    }
+
+    .feature-item .icon {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .feature-item h3 {
+      font-size: 0.9rem;
+      color: #ff9800;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .contact-info {
+      background: rgba(255, 152, 0, 0.1);
+      border-left: 4px solid #ff9800;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 30px;
+    }
+
+    .contact-info h3 {
+      color: #ff9800;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .contact-info p {
+      margin: 8px 0;
+      font-size: 1rem;
     }
 
     footer {
-      margin-top: 25px;
+      text-align: center;
+      padding: 2rem;
+      background: rgba(15, 32, 39, 0.95);
+      color: #b0b0b0;
       font-size: 0.9rem;
-      opacity: 0.8;
+      border-top: 1px solid rgba(255, 152, 0, 0.2);
     }
 
-    @media (max-width: 600px) {
+    /* Responsive Design */
+    @media (max-width: 768px) {
       h1 {
         font-size: 2rem;
       }
 
+      h2 {
+        font-size: 1.1rem;
+      }
+
+      nav ul {
+        gap: 1rem;
+        font-size: 0.9rem;
+      }
+
       .container {
         padding: 35px 20px;
+        margin: 0 1rem;
       }
+
+      .features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      h2 {
+        font-size: 0.95rem;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .container {
+        padding: 25px 15px;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .badge {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Accessibility */
+    a:focus,
+    button:focus {
+      outline: 2px solid #ff9800;
+      outline-offset: 2px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Government Senior Secondary School</h1>
-    <h2>Hodu, Sindhari (344033)</h2>
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <a href="#" class="logo">🏫 GSSS Hodu</a>
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="badge">🚧 Website Coming Soon</div>
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+      <h1>Government Senior Secondary School</h1>
+      <h2>Hodu, Sindhari (344033)</h2>
 
-    <p>
-      We are working on launching our official website to provide students,
-      parents, and teachers with important updates, academic resources,
-      announcements, and school information.
-    </p>
+      <div class="badge">🚧 Website Coming Soon</div>
 
-    <p>
-      Stay connected. Something meaningful for our school community is on the way.
-    </p>
+      <p>
+        Welcome to GSSS Hodu! We are working on launching our official website to provide students,
+        parents, and teachers with important updates, academic resources, announcements, and school information.
+      </p>
 
-    <footer>
-      © 2026 GSSS Hodu | All Rights Reserved
-    </footer>
-  </div>
+      <section id="features">
+        <h3 style="color: #ff9800; margin-bottom: 20px;">What's Coming</h3>
+        <div class="features">
+          <div class="feature-item">
+            <div class="icon">📚</div>
+            <h3>Resources</h3>
+          </div>
+          <div class="feature-item">
+            <div class="icon">📢</div>
+            <h3>Announcements</h3>
+          </div>
+          <div class="feature-item">
+            <div class="icon">📅</div>
+            <h3>Calendar</h3>
+          </div>
+          <div class="feature-item">
+            <div class="icon">👥</div>
+            <h3>Staff</h3>
+          </div>
+        </div>
+      </section>
+
+      <p>
+        Stay connected. Something meaningful for our school community is on the way.
+      </p>
+
+      <section id="contact" class="contact-info">
+        <h3>Get in Touch</h3>
+        <p><strong>Location:</strong> Hodu, Sindhari, 344033</p>
+        <p><strong>Email:</strong> Coming soon</p>
+        <p><strong>Phone:</strong> Coming soon</p>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 GSSS Hodu | All Rights Reserved</p>
+    <p>Government Senior Secondary School, Sindhari</p>
+  </footer>
 </body>
 </html>
